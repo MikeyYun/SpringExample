@@ -12,13 +12,14 @@ import com.mikeyyun.spring.ex.mybatis.domain.Review;
 import com.mikeyyun.spring.ex.mybatis.service.ReviewService;
 
 @Controller
+@RequestMapping("/mybatis/review")
 public class ReviewController {
 	
 	@Autowired
 	private ReviewService reviewService;
 	
 	// Return the review information with an ID of 5 in the response as JSON.
-	@RequestMapping("/mybatis/review")
+	@RequestMapping("/review")
 	@ResponseBody
 	public Review review (@RequestParam("id")int id) {
 		
@@ -27,5 +28,16 @@ public class ReviewController {
 		
 		return review;
 		
+	}
+	
+	// 리뷰 내용을 저장하는 기능
+	@ResponseBody
+	@RequestMapping("/create")
+	public String createReview() {
+		
+		// 4, 치즈피자, 엄시윤, 4.5, 치즈피자 존맛탱구리!!
+		int count = reviewService.addReview(4, "고구마피자", "엄시윤", 5.0, "와앙 존맛탱구리!!");	
+		
+		return "삽입 결과 : " + count ;
 	}
 }

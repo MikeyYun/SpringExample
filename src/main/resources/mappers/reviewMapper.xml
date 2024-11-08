@@ -19,6 +19,25 @@
  			`new_review`
  	  WHERE
  	  		`id` = #{id}
- 				
  	</select>
+ 	
+ 	<insert id="insertReview" parameterType="map">
+ 		INSERT INTO
+ 			  `new_review`
+ 		(
+ 			  `storeId`
+ 		 	, `menu`
+ 		  	, `userName`
+ 		  	, `point`
+ 		  	, `review`
+ 		)
+ 		VALUE
+ 		(
+ 			#{storeId}
+ 		  , #{menu}
+ 		  , #{userName}
+ 		  , #{point}
+ 		  , #{review}
+ 		)
+ 	</insert>
  </mapper>

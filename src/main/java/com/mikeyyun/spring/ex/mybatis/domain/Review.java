@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Review {
 	
 	private int id;
-	private int scoreId;
+	private int storeId;
 	private String menu;
 	private String userName;
 	private double point;
@@ -19,11 +19,11 @@ public class Review {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getScoreId() {
-		return scoreId;
+	public int getStoreId() {
+		return storeId;
 	}
-	public void setScoreId(int scoreId) {
-		this.scoreId = scoreId;
+	public void setStoreId(int storeId) {
+		this.storeId = storeId;
 	}
 	public String getMenu() {
 		return menu;
@@ -62,6 +62,7 @@ public class Review {
 		this.updatedAt = updatedAt;
 	}
 	
+		
 	
 	
 }
