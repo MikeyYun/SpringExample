@@ -12,10 +12,10 @@ public class ReviewService {
 	@Autowired
 	private ReviewRepository reviewRepository;
 	
-	// Get the review information with and ID of 5
-	public Review getReview() {
-		Review review = reviewRepository.selectReview();
-		// Retrieve the row with ID 5 from the new_review table
+	// Get the review information that corresponds to the provided ID.
+	public Review getReview(int id) {
+		Review review = reviewRepository.selectReview(id);
+	// Retrieve the row from the new_review table where the ID matches the provided value.
 		
 		return review;
 	}
