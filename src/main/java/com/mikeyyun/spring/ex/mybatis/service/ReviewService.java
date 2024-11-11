@@ -34,4 +34,13 @@ public class ReviewService {
 		
 		return count;
 	}
+	
+	// 전달 받은 Review 객체를 통해 저장
+	public int addReviewByObject(Review review) {
+		
+		// 전달 받은 Review 객체로 new_review 에 insert
+		int count = reviewRepository.insertReviewByObject(review);
+		
+		return count;
+	}
 }

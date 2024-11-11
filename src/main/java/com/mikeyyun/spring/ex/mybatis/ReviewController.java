@@ -36,8 +36,18 @@ public class ReviewController {
 	public String createReview() {
 		
 		// 4, 치즈피자, 엄시윤, 4.5, 치즈피자 존맛탱구리!!
-		int count = reviewService.addReview(4, "고구마피자", "엄시윤", 5.0, "와앙 존맛탱구리!!");	
+		// int count = reviewService.addReview(4, "고구마피자", "엄시윤", 5.0, "와앙 존맛탱구리!!");
 		
-		return "삽입 결과 : " + count ;
+		Review review = new Review();
+		review.setStoreId(2);
+		review.setMenu("베스킨라빈스");
+		review.setUserName("엄시우");
+		review.setPoint(4.0);
+		review.setReview("맛이쪙");
+		
+		// Review 객체로 구성된 리뷰 내용을 저장한다.
+		int count = reviewService.addReviewByObject(review);
+		
+		return "삽입 결과 : " + count;
 	}
 }
