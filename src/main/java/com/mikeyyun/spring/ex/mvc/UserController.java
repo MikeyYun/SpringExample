@@ -21,7 +21,7 @@ public class UserController {
 	private UserService userService;
 	
 	// 사용자 정보를 request parameter 로 전달 받고, 저장하는 기능
-	@ResponseBody
+//	@ResponseBody
 //	@RequestMapping(path="/mvc/user/create", method=RequestMethod.POST)
 	@PostMapping("/create")
 	public String createUser(
@@ -31,17 +31,27 @@ public class UserController {
 			, @RequestParam("introduce") String introduce
 			, Model model) {
 		
-		int count = userService.addUser(name, birthday, email, introduce);
+//		int count = userService.addUser(name, birthday, email, introduce);
 		
-		return "삽입 성공 : " + count;
+		User user = new User();
+		user.setName(name);
+		user.setYyyymmdd(birthday);
+		user.setEmail(email);
+		user.setIntroduce(introduce);
+		
+		int count = userService.addUserByObject(user);
+		
+//		return "삽입 성공 : " + count + ", id : " + user.getId();
+		model.addAttribute("result", user);
+		return "mvc/userinput";
 	}
 	
-	@GetMapping("/input")
+	@GetMapping("/Input")
 	public String userInput() {
-		return "mvc/userInput";
+		return "mvc/userinput";
 	}
 	
-	@GetMapping("/info")
+	@GetMapping("/Info")
 	public String userInfo(Model model) {
 		
 		// 가장 최근에 등록한 한 사용자 정보 얻어오기
@@ -51,7 +61,7 @@ public class UserController {
 		model.addAttribute("title", "마지막 사용자 정보");
 		model.addAttribute("result", user);
 		
-		return "mvc/userInfo";
+		return "mvc/userinfo";
 	}
 
 }
