@@ -28,7 +28,8 @@ public class UserController {
 			  @RequestParam("name") String name
 			, @RequestParam("birthday") String birthday
 			, @RequestParam("email") String email
-			, @RequestParam("introduce") String introduce) {
+			, @RequestParam("introduce") String introduce
+			, Model model) {
 		
 		int count = userService.addUser(name, birthday, email, introduce);
 		

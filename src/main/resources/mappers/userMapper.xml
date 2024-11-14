@@ -23,7 +23,7 @@
 	</insert>
 	<select id="selectLastUser"
 	resultType="com.mikeyyun.spring.ex.mvc.domain.User">
-		SELECT
+			SELECT
 			`id`
 			, `name`
 			, `yyyymmdd`
@@ -31,12 +31,11 @@
 			, `introduce`
 			, `createdAt`
 			, `updatedAt`
-			
-			FROM
-				'new_user`
-			ORDER BY
-				`id` DESC
-			LIMIT
-				1
+		FROM
+			`new_user`
+		ORDER BY 
+			`id` DESC
+		LIMIT 
+			1
 	</select>
 </mapper>

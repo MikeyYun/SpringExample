@@ -6,11 +6,13 @@ public class User {
 	
 	private int id;
 	private String name;
-	private String yymmdd;
+	private String yyyymmdd;
 	private String email;
 	private String introduce;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -23,11 +25,11 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getYymmdd() {
-		return yymmdd;
+	public String getYyyymmdd() {
+		return yyyymmdd;
 	}
-	public void setYymmdd(String yymmdd) {
-		this.yymmdd = yymmdd;
+	public void setYyyymmdd(String yyyymmdd) {
+		this.yyyymmdd = yyyymmdd;
 	}
 	public String getEmail() {
 		return email;
