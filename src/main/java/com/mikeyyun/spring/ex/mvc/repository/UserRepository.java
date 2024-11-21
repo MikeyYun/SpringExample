@@ -18,4 +18,6 @@ public interface UserRepository {
 	
 	public User selectLastUser();
 	
+	public int countByEmail(@Param("email") String email);
+	
 }
