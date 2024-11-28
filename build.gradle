@@ -30,12 +30,25 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	
+<<<<<<< HEAD
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 	
+=======
+>>>>>>> develop
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+<<<<<<< HEAD
+=======
+	
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
+	
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+>>>>>>> develop
 }
 
 tasks.named('test') {
